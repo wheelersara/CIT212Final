@@ -1,0 +1,184 @@
+@font-face {
+
+    font-family: CuteMars;
+  
+    src: url("CuteMarsDEMO.otf");
+  
+}
+@font-face {
+
+    font-family: DroidSansBold;
+  
+    src: url("DroidSans-Bold.ttf");
+  
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(16, 50px);
+    background-color:#C1D4D9;
+}
+
+header {
+    grid-column: 1/8;
+    grid-row: 1/3;
+    background-color: #0F2026;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+header h1{
+    font-family: CuteMars;
+    font-size: 68px;
+    color: white;
+}
+
+nav{
+    grid-column: 1/8;
+    grid-row: 3/4;
+    background-color: #2C3E40;
+    align-content: center;
+}
+
+nav a{
+    font-family: DroidSansBold;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    margin-left: 15px;
+}
+
+footer{
+    grid-column: 1/8;
+    grid-row: 16/17;
+    background-color: #2C3E40;
+    color: white;
+    align-content: center;
+}
+
+footer h1{
+    font-size: 18px;
+    text-align: center;
+    font-family: DroidSansBold;
+}
+
+
+.flipcard-container{
+    grid-column: 1/8;
+    grid-row: 4/16;
+    margin: 10px;
+    background-color: #8FA1A6;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 18%;
+    height: 45%;
+    perspective: 1000px; 
+    z-index: 100;
+    margin: 10px;
+    border-radius: 5px;
+}
+.flip-card img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}  
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+    border-radius: 5px;
+}
+  
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+  
+
+.flip-card-front {
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+  
+
+.flip-card-back {
+    background-color: #0F2026;;
+    color: white;
+    transform: rotateY(180deg);
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.flip-card-back h1{
+    font-size: 24px;
+    font-family: DroidSansBold;
+}
+
+.flip-card-back p{
+    font-size: 14px;
+    margin: 5px;
+}
+
+
+@media (max-width: 1100px){
+    .container{
+        display: grid;
+        grid-template-rows: auto;
+        background-color:#C1D4D9;
+    }
+
+    header{
+        grid-row: 1;
+    }
+
+    header h1{
+        font-size: 32px;
+    }
+    
+    nav{
+        grid-row: 2;
+    }
+
+    nav a{
+        font-size: 20px;
+    }
+
+    .flipcard-container{
+        grid-row: 3;
+        margin: 5px;
+    }
+
+    .flip-card {
+        width: 300px;
+        height: 300px;
+        margin: 5px;
+        border-radius: 5px;
+    } 
+
+    footer{
+        grid-row: 4;
+    }
+}
